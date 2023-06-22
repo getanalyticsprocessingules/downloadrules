@@ -2,14 +2,15 @@
 <html lang="en">
 <!-- Website template by freewebsitetemplates.com -->
 <html>
-<head>  
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Miguel Martinez">
     <meta name="description" content="Adobe Analytics API Tools">
     <title>Download API Processing Rules</title>
-    
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+
 <!-- <link href="/static/css/2.43b2b750.chunk.css" rel="stylesheet">
 <link href="/static/css/main.105e6cdf.chunk.css" rel="stylesheet"> -->
 <style>
@@ -20,9 +21,9 @@
 
     <link rel="shortcut icon" href="/static/jwt_tools/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    
+
     <link href="/static/css/dark.css" rel="stylesheet">
-    
+
     <script>
     var _mtm = window._mtm = window._mtm || [];
     _mtm.push({ 'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start' });
@@ -34,11 +35,11 @@
 
 
 </head>
-<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+<body data-theme="default" data-layout="fluid" >
     <div class="wrapper">
                 <main class="content">
-                
-                
+
+
 <div class="container-fluid p-0">
     <div class="row mb-2 mb-xl-3">
         <div class="col-auto d-none d-sm-block">
@@ -58,61 +59,71 @@
                     <a class="" target="_blank" href="https://analystadmin.com/adobe-analytics-api-tools/">
                         What will this give me access to?
                     </a>
-                    </h6>
+
 		    <p>
-			    
-			
-			    
-			    
+
+
+
+
 		    </p>
                 </div>
                 <div class="card-body">
                     <div id="root"></div>
 					<div>
 					 <div>
-					   <form>
+					   <form action = "/next_button" method = "post">
 					     <div class="form-group">
 						   <label for="username">API Username</label>
-						   <input type="text" class="form-control" name="username" aria-describedby="usernameHelp" placeholder="API Username" required value>
+						   <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="API Username" required value>
 						   <small id="usernameHelp" class="form-text text-muted">The API Username from Company Settings.</small>
 						</div>
 						<p>
-							
-							
+
+
 						   </p>
 						<div class="form-group">
 						  <label for="secret_key">API Shared Secret</label>
-						  <input type="text" class="form-control" name="secret_key" aria-decribedby="secretHelp" placeholder="API Shared Secret" required value>
+						  <input type="text" class="form-control" id="secret_key" name="secret_key" aria-decribedby="secretHelp" placeholder="API Shared Secret" required value>
 						  <small id="secretHelp" class="form-text text-muted">The API Shared Secret from Company Settings.</small>
 						<small class="form-text text-muted">
 						   <a target="_blank" rel="noopener noreferrer" href="https://analystadmin.com/adobe-analytics-api-credentials/">Help</a>
 						</small>
 						<p>
-							
-							
-							
+
+
+
 					        </p>
 						</div>
-						<button class="btn btn-primary">Next</button>
+						<button id="next" class="btn btn-primary">Next</button>
 					   </form>
 					  </div>
 					 </div>
-						  
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-            </main>
 
+
+        <div>
+    {% if result %}
+    <p>Error : </p>
+    <textarea style="margin-left: 10px;color:red;resize:none" class="textbox" cols="40" rows="2" readonly>
+    {{ result}}
+    </textarea>
+    {% endif %}
+        </div>
 	<div id="footer">
 		<div>
 			<p>
 				&#169; Accenture Solutions. All Rights Reserved.
 			</p>
-			
+
 		</div>
 	</div>
+    </main>
+    </div>
 </body>
 </html>
